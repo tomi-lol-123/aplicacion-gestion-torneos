@@ -1,4 +1,4 @@
-package control;
+package clases;
 public class Jugador extends Persona{
 
     private String nickName;

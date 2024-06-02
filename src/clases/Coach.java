@@ -1,4 +1,4 @@
-package control;
+package clases;
 
 public class Coach extends Persona{
 
@@ -12,7 +12,7 @@ public class Coach extends Persona{
     this.experiencia = experiencia;
   }
 
-  
+
   public int getExperiencia() {
     return experiencia;
   }

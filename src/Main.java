@@ -1,4 +1,4 @@
-import control.Jugador;
+import clases.Jugador;
 
 
 public class Main {

@@ -1,4 +1,4 @@
-package control;
+package clases;
 
 public abstract class Persona {
 
