@@ -13,8 +13,8 @@ public abstract  class TorneoFps extends Torneo{
     public TorneoFps() {
     }
 
-    public TorneoFps(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, String[] bracket, int bajasTotales, int rondasTotales, String armarMasPopular) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, bracket);
+    public TorneoFps(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int bajasTotales, int rondasTotales, String armarMasPopular) {
+        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos);
         this.bajasTotales = bajasTotales;
         this.rondasTotales = rondasTotales;
         this.armarMasPopular = armarMasPopular;

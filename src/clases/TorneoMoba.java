@@ -13,8 +13,8 @@ public abstract class TorneoMoba extends Torneo {
     public TorneoMoba() {
     }
 
-    public TorneoMoba(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, String[] bracket, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, bracket);
+    public TorneoMoba(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos) {
+        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos);
         this.oroTotal = oroTotal;
         this.torretasDestruidas = torretasDestruidas;
         this.inhibidoresDestruidos = inhibidoresDestruidos;

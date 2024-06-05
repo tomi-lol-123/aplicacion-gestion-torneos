@@ -11,8 +11,8 @@ public class TorneoLol extends TorneoMoba{
     public TorneoLol() {
     }
 
-    public TorneoLol(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, String[] bracket, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, int baronesAsesinados, int dragonesAsesinados) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, bracket, oroTotal, torretasDestruidas, inhibidoresDestruidos);
+    public TorneoLol(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, int baronesAsesinados, int dragonesAsesinados) {
+        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos, oroTotal, torretasDestruidas, inhibidoresDestruidos);
         this.baronesAsesinados = baronesAsesinados;
         this.dragonesAsesinados = dragonesAsesinados;
     }
