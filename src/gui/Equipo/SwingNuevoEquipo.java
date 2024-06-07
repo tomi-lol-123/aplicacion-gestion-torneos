@@ -1,5 +1,7 @@
 package gui.Equipo;
 
+import control.ControlEquipo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,6 +28,8 @@ public class SwingNuevoEquipo {
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                ControlEquipo datosEquipo = new ControlEquipo(1, "Los picantes", "Amazon", 10, 1);
 
             }
         });

@@ -76,7 +76,7 @@ public class Main {
 
         ventana.setContentPane(panel);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventana.setSize(720,460);
+        ventana.setSize(1080,720);
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
 
