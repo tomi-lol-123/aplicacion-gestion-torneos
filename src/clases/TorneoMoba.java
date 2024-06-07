@@ -2,7 +2,7 @@ package clases;
 
 import java.util.Date;
 
-public abstract class TorneoMoba extends Torneo {
+public class TorneoMoba extends Torneo {
 
     protected int oroTotal;
 
@@ -13,8 +13,8 @@ public abstract class TorneoMoba extends Torneo {
     public TorneoMoba() {
     }
 
-    public TorneoMoba(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos);
+    public TorneoMoba(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos) {
+        super(nombre, organizador, videojuego, cupos, fecha, descripcion, premios);
         this.oroTotal = oroTotal;
         this.torretasDestruidas = torretasDestruidas;
         this.inhibidoresDestruidos = inhibidoresDestruidos;

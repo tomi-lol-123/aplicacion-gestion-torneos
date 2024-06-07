@@ -9,8 +9,8 @@ public class TorneoDota extends TorneoMoba {
     public TorneoDota() {
     }
 
-    public TorneoDota(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, int roshanAsesinados) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos, oroTotal, torretasDestruidas, inhibidoresDestruidos);
+    public TorneoDota(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, int roshanAsesinados) {
+        super(nombre, organizador, videojuego, cupos, fecha, descripcion, premios, oroTotal, torretasDestruidas, inhibidoresDestruidos);
         this.roshanAsesinados = roshanAsesinados;
     }
 

@@ -1,19 +1,10 @@
-import clases.Equipo;
-import clases.Jugador;
-import clases.Torneo;
-import gui.*;
-import gui.Equipo.*;
-import gui.Torneo.SwingBuscarTorneo;
-import gui.Torneo.SwingCrearTorneo;
-import gui.Torneo.SwingMenuTorneo;
-
+import control.ControlTorneoMoba;
 
 import javax.swing.*;
 import java.awt.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class Main {
@@ -76,7 +67,7 @@ public class Main {
 
         ventana.setContentPane(panel);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventana.setSize(720,460);
+        ventana.setSize(1080,720);
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
 

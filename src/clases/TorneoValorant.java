@@ -9,8 +9,8 @@ public class TorneoValorant extends TorneoFps {
     public TorneoValorant() {
     }
 
-    public TorneoValorant(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int bajasTotales, int rondasTotales, String armarMasPopular, String champMasPickeado) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos, bajasTotales, rondasTotales, armarMasPopular);
+    public TorneoValorant(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int bajasTotales, int rondasTotales, String armarMasPopular, String champMasPickeado) {
+        super(nombre, organizador, videojuego, cupos, fecha, descripcion, premios, bajasTotales, rondasTotales, armarMasPopular);
         this.champMasPickeado = champMasPickeado;
     }
 

@@ -4,22 +4,15 @@ import java.util.Date;
 
 public class TorneoLol extends TorneoMoba{
 
-    private int baronesAsesinados;
-
     private int dragonesAsesinados;
 
     public TorneoLol() {
     }
 
-    public TorneoLol(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, int baronesAsesinados, int dragonesAsesinados) {
-        super(nombre, organizador, videojuego, cupos, fecha, reglas, premios, equipos, oroTotal, torretasDestruidas, inhibidoresDestruidos);
-        this.baronesAsesinados = baronesAsesinados;
+    public TorneoLol(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, int dragonesAsesinados) {
+        super(nombre, organizador, videojuego, cupos, fecha, descripcion, premios, oroTotal, torretasDestruidas, inhibidoresDestruidos);
         this.dragonesAsesinados = dragonesAsesinados;
     }
-
-    public int getBaronesAsesinados() { return baronesAsesinados; }
-
-    public void setBaronesAsesinados(int baronesAsesinados) { this.baronesAsesinados = baronesAsesinados; }
 
     public int getDragonesAsesinados() { return dragonesAsesinados; }
 

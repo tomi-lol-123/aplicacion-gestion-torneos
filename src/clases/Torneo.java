@@ -17,7 +17,7 @@ public abstract class Torneo {
 
     protected Date fecha;
 
-    protected String[] reglas;
+    protected String descripcion;
 
     protected String premios;
 
@@ -28,16 +28,15 @@ public abstract class Torneo {
     public Torneo() {
     }
 
-    public Torneo(String nombre, String organizador, String videojuego, int cupos, Date fecha, String[] reglas, String premios, Equipo[] equipos) {
+    public Torneo(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios) {
         this.nombre = nombre;
         this.organizador = organizador;
         this.videojuego = videojuego;
         this.cupos = cupos;
         this.fecha = fecha;
-        this.reglas = reglas;
+        this.descripcion = descripcion;
         this.premios = premios;
-        this.equipos = equipos;
-        this.bracket = mezclarBracket(equipos);
+//        this.bracket = mezclarBracket(equipos);
     }
 
     public String getNombre() {
@@ -80,12 +79,12 @@ public abstract class Torneo {
         this.fecha = fecha;
     }
 
-    public String[] getReglas() {
-        return reglas;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setReglas(String[] reglas) {
-        this.reglas = reglas;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getPremios() {
