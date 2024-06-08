@@ -8,9 +8,6 @@ import java.awt.event.ActionListener;
 public class SwingMenuEquipo {
     private JButton nuevoEquipoButton;
     private JButton buscarEquipoButton;
-    private JButton asociarJugadoresButton;
-    private JButton asociarCouchButton;
-    private JButton registrarATorneoButton;
     private JButton regresarButton;
     private JPanel panelMenuEquipo;
 
@@ -35,24 +32,8 @@ public class SwingMenuEquipo {
                 cardLayout.show(cardPanel, "buscarEquipo");
             }
         });
-        asociarJugadoresButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cardPanel, "asociarJugadores");
-            }
-        });
-        asociarCouchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cardPanel, "asociarCouch");
-            }
-        });
-        registrarATorneoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cardPanel, "registrarATorneo");
-            }
-        });
+
+
     }
 
     public JPanel getPanelMenuEquipo() {

@@ -10,6 +10,7 @@ public class SwingMenuPrincipal {
     private JButton coachButton;
     private JButton torneoButton;
     private JPanel panelSMenuPrincipal;
+    private JButton individuoButton;
 
     public SwingMenuPrincipal(JFrame frame, CardLayout cardLayout, JPanel cardPanel) {
         equipoButton.addActionListener(new ActionListener() {
@@ -31,6 +32,10 @@ public class SwingMenuPrincipal {
             }
         });
 
+        individuoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { cardLayout.show(cardPanel, "individuo"); }
+        });
     }
 
     public JPanel getPanelSMenuPrincipal() {

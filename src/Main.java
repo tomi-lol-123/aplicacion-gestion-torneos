@@ -39,9 +39,11 @@ public class Main {
         gui.Equipo.SwingMenuEquipo SME = new gui.Equipo.SwingMenuEquipo(cardLayout,panel);
         gui.Torneo.SwingMenuTorneo SMT = new gui.Torneo.SwingMenuTorneo(cardLayout,panel);
         gui.Eventos SE = new gui.Eventos(cardLayout,panel);
+        gui.SwingIndividuo SI = new gui.SwingIndividuo(cardLayout,panel);
 
         gui.Torneo.SwingBuscarTorneo SBT = new gui.Torneo.SwingBuscarTorneo(cardLayout,panel);
         gui.Torneo.SwingCrearTorneo SCT = new gui.Torneo.SwingCrearTorneo(cardLayout,panel);
+        gui.Torneo.SwingVerBracket SVB = new gui.Torneo.SwingVerBracket(cardLayout,panel);
 
         gui.Equipo.SwingAsociarCouch SAC = new gui.Equipo.SwingAsociarCouch(cardLayout,panel);
         gui.Equipo.SwingAsociarJugador SAJ = new gui.Equipo.SwingAsociarJugador(cardLayout,panel);
@@ -55,9 +57,11 @@ public class Main {
         panel.add(SME.getPanelMenuEquipo(),"equipo");
         panel.add(SMT.getPanelMenuTorneo(),"torneo");
         panel.add(SE.getPanelProximosEventos(),"eventos");
+        panel.add(SI.getPanelIndividuo(),"individuo");
 
         panel.add(SBT.getPanelBuscarTorneo(),"buscarTorneo");
         panel.add(SCT.getPanelCrearTorneo(),"crearTorneo");
+        panel.add(SVB.getPanelVerBracket(),"verBracket");
 
         panel.add(SAC.getPanelAsociarCouch(),"asociarCouch");
         panel.add(SAJ.getPanelAsociarJugador(),"asociarJugadores");

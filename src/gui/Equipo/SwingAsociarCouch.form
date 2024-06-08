@@ -17,7 +17,7 @@
           <text value="Asociar Couch"/>
         </properties>
       </component>
-      <component id="16d72" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="16d72" class="javax.swing.JTextField" binding="textNombre">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -25,7 +25,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="288e4" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="288e4" class="javax.swing.JTextField" binding="textApellido">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -33,7 +33,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="f3d59" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="f3d59" class="javax.swing.JTextField" binding="textNacionalidad">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -41,7 +41,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="c92d8" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="c92d8" class="javax.swing.JTextField" binding="textExperiencia">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -94,7 +94,7 @@
       </component>
       <component id="6ad7f" class="javax.swing.JButton" binding="regresarButton" default-binding="true">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Regresar"/>

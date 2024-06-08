@@ -1,7 +1,5 @@
 package gui.Equipo;
 
-import control.ControlEquipo;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,11 +10,11 @@ public class SwingNuevoEquipo {
     private JButton agregarButton;
     private JButton limpiarButton;
     private JButton regresarButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JTextField textIDEquipo;
+    private JTextField textNombre;
+    private JTextField textResponsable;
+    private JTextField textVictorias;
+    private JTextField textDerrotas;
 
     public SwingNuevoEquipo(CardLayout cardLayout, JPanel cardPanel) {
         regresarButton.addActionListener(new ActionListener() {
@@ -29,15 +27,44 @@ public class SwingNuevoEquipo {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ControlEquipo controlEquipo = new ControlEquipo();
-                controlEquipo.crearEquipo(1, "Los picantes", "Amazon", 10, 1);
+                try {
+                    String nombre = textNombre.getText();
+                    String responsable = textResponsable.getText();
+                    int IDEquipo = Integer.parseInt(textIDEquipo.getText());
+                    int victorias = Integer.parseInt(textVictorias.getText());
+                    int derrotas = Integer.parseInt(textDerrotas.getText());
+
+
+                    if (nombre.isEmpty() || responsable.isEmpty()) {
+                        JOptionPane.showMessageDialog(panelNuevoEquipo, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        System.out.println();
+                        System.out.println("---Equipo---");
+                        System.out.println(IDEquipo + " " + nombre + " " + responsable + " " + victorias + " " + derrotas);
+
+                        textIDEquipo.setText("");
+                        textNombre.setText("");
+                        textResponsable.setText("");
+                        textVictorias.setText("");
+                        textDerrotas.setText("");
+
+                        JOptionPane.showMessageDialog(panelNuevoEquipo, "Equipo cargado con exito!", "Finalizado", JOptionPane.INFORMATION_MESSAGE);
+                    }
+
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(panelNuevoEquipo, "IDEquipo, victorias y derrotas deben ser un número entero.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
 
             }
         });
         limpiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                textIDEquipo.setText("");
+                textNombre.setText("");
+                textResponsable.setText("");
+                textVictorias.setText("");
+                textDerrotas.setText("");
             }
         });
     }

@@ -10,6 +10,7 @@ public class SwingMenuTorneo {
     private JButton crearTorneoButton;
     private JButton buscarTorneoButton;
     private JButton regresarButton;
+    private JButton registrarATorneoButton;
 
     public SwingMenuTorneo(CardLayout cardLayout, JPanel cardPanel) {
         crearTorneoButton.addActionListener(new ActionListener() {
@@ -22,6 +23,12 @@ public class SwingMenuTorneo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cardLayout.show(cardPanel, "buscarTorneo");
+            }
+        });
+        registrarATorneoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "registrarATorneo");
             }
         });
         regresarButton.addActionListener(new ActionListener() {
