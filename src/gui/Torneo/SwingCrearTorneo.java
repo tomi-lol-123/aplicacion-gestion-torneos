@@ -1,9 +1,5 @@
 package gui.Torneo;
 
-import control.ControlTorneoCounter;
-import control.ControlTorneoMoba;
-import control.ControlTorneoValorant;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +7,6 @@ import java.awt.event.ActionListener;
 
 public class SwingCrearTorneo {
     private JPanel panelCrearTorneo;
-    private JTextField textIDTorneo;
     private JTextField textNombre;
     private JRadioButton leagueOfLegendsRadioButton;
     private JRadioButton dota2RadioButton;
@@ -21,12 +16,20 @@ public class SwingCrearTorneo {
     private JTextField textCupos;
     private JTextField textPremio;
     private JTextField textFecha;
-    private JTextField textEstadisticas;
     private JTextArea textAreaReglas;
     private JButton regresarButton;
     private JButton crearTorneoButton;
     private JButton limpiarButton;
+    private JTextField textEstadistica1;
+    private JTextField textEstadistica2;
+    private JTextField textEstadistica4;
+    private JTextField textEstadistica3;
+    private JLabel Estadistica1;
+    private JLabel Estadistica2;
+    private JLabel Estadistica3;
+    private JLabel Estadistica4;
     private ButtonGroup buttonGroup;
+
 
     public SwingCrearTorneo(CardLayout cardLayout, JPanel cardPanel) {
 
@@ -47,59 +50,95 @@ public class SwingCrearTorneo {
             public void actionPerformed(ActionEvent e) {
 
                 try{
-                    int IDTorneo = Integer.parseInt(textIDTorneo.getText());
                     String Nombre = textNombre.getText();
                     String Organizador = textOrganizador.getText();
                     int Cupos = Integer.parseInt(textCupos.getText());
                     String Premio = textPremio.getText();
                     String Fecha = textFecha.getText();
-                    int Estadisticas = Integer.parseInt(textEstadisticas.getText());
                     String reglasTexto = textAreaReglas.getText().trim();
 
-                    if (Nombre.isEmpty() || Organizador.isEmpty() || Premio.isEmpty() || Fecha.isEmpty()) {
+
+                    if (Nombre.isEmpty() || Organizador.isEmpty() || Premio.isEmpty() || Fecha.isEmpty() || reglasTexto.isEmpty()) {
                         JOptionPane.showMessageDialog(panelCrearTorneo, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
 
                     else{
-
-                        String juegoSeleccionado;
+                        String estadisticas = "";
+                        String juegoSeleccionado = "";
                         if (leagueOfLegendsRadioButton.isSelected()) {
-                            juegoSeleccionado = "lol";
+                            juegoSeleccionado = "League of Legends";
+
+                            int Esta1 = Integer.parseInt(textEstadistica1.getText());
+                            int Esta2 = Integer.parseInt(textEstadistica2.getText());
+                            int Esta3 = Integer.parseInt(textEstadistica3.getText());
+                            String Esta4 = textEstadistica4.getText();
+
+                            estadisticas = "Estadísticas:\n" +
+                                    "Inhibidores destruidos: " + Esta1 + "\n" +
+                                    "Torretas destruidas: " + Esta2 + "\n" +
+                                    "Oro total: " + Esta3 + "\n" +
+                                    "Objetivo más capturado: " + Esta4 + "\n";
+
+
                         } else if (dota2RadioButton.isSelected()) {
-                            juegoSeleccionado = "dota";
+                            juegoSeleccionado = "Dota 2";
+
+                            int Esta1 = Integer.parseInt(textEstadistica1.getText());
+                            int Esta2 = Integer.parseInt(textEstadistica2.getText());
+                            int Esta3 = Integer.parseInt(textEstadistica3.getText());
+                            String Esta4 = textEstadistica4.getText();
+
+                            estadisticas = "Estadísticas:\n" +
+                                    "Inhibidores destruidos: " + Esta1 + "\n" +
+                                    "Torretas destruidas: " + Esta2 + "\n" +
+                                    "Oro total: " + Esta3 + "\n" +
+                                    "Objetivo más capturado: " + Esta4 + "\n";
+
                         } else if (valorantRadioButton.isSelected()) {
-                            juegoSeleccionado = "valorant";
+                            juegoSeleccionado = "Valorant";
+
+                            int Esta1 = Integer.parseInt(textEstadistica1.getText());
+                            int Esta2 = Integer.parseInt(textEstadistica2.getText());
+                            String Esta3 = textEstadistica3.getText();
+                            String Esta4 = textEstadistica4.getText();
+
+                            estadisticas = "Estadísticas:\n" +
+                                    "Rondas totales: " + Esta1 + "\n" +
+                                    "Bajas totales: " + Esta2 + "\n" +
+                                    "Arma más popular: " + Esta3 + "\n" +
+                                    "Campeón mas pickeado: " + Esta4 + "\n";
+
                         } else if (counterStrike2RadioButton.isSelected()) {
-                            juegoSeleccionado = "cs";
-                        }
-                        else {
-                            juegoSeleccionado = "juego desconocido";
+                            juegoSeleccionado = "Counter-Strike 2";
+
+                            int Esta1 = Integer.parseInt(textEstadistica1.getText());
+                            int Esta2 = Integer.parseInt(textEstadistica2.getText());
+                            int Esta3 = Integer.parseInt(textEstadistica3.getText());
+                            int Esta4 = Integer.parseInt(textEstadistica4.getText());
+
+                            estadisticas = "Estadísticas:\n" +
+                                    "Rondas totales: " + Esta1 + "\n" +
+                                    "Bajas totales: " + Esta2 + "\n" +
+                                    "Arma más popular: " + Esta3 + "\n" +
+                                    "Muertes por fuego amigo: " + Esta4 + "\n";
                         }
 
 
                         System.out.println();
                         System.out.println("---Torneo---");
-                        System.out.println(IDTorneo + " " + Nombre + " " + Organizador + " " + Cupos + " " + Premio + " " + Fecha + " " + Estadisticas + " " + juegoSeleccionado + " "+ "\n" + "Reglas: " + "\n" + reglasTexto);
+                        System.out.println(Nombre + " " + Organizador + " " + Cupos + " " + Premio + " " + Fecha + " " + juegoSeleccionado + " " + "\n" + estadisticas + "\n" + "Reglas: " +  "\n" + reglasTexto);
+                        System.out.println();
 
-                        if (juegoSeleccionado.equals("valorant")) {
-                            ControlTorneoValorant controlTorneoValorant = new ControlTorneoValorant();
-//                            controlTorneoValorant.crearTorneo();
-                        }
-                        else if (juegoSeleccionado.equals("cs")) {
-                            ControlTorneoCounter controlTorneoCounter = new ControlTorneoCounter();
-                        }
-                        else {
-                            ControlTorneoMoba controlTorneoMoba = new ControlTorneoMoba();
-                        }
-
-                        textIDTorneo.setText("");
                         textNombre.setText("");
                         textOrganizador.setText("");
                         textCupos.setText("");
                         textPremio.setText("");
                         textFecha.setText("");
-                        textEstadisticas.setText("");
                         textAreaReglas.setText("");
+                        textEstadistica1.setText("");
+                        textEstadistica2.setText("");
+                        textEstadistica3.setText("");
+                        textEstadistica4.setText("");
 
 
                     }
@@ -107,7 +146,7 @@ public class SwingCrearTorneo {
             }
 
                 catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(panelCrearTorneo, "IDtorneo, cupos y estadisticas deben ser números enteros.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(panelCrearTorneo, "Cupos y estadisticas deben ser números enteros.", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
 
@@ -116,14 +155,60 @@ public class SwingCrearTorneo {
         limpiarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textIDTorneo.setText("");
+
                 textNombre.setText("");
                 textOrganizador.setText("");
                 textCupos.setText("");
                 textPremio.setText("");
                 textFecha.setText("");
-                textEstadisticas.setText("");
                 textAreaReglas.setText("");
+                textEstadistica1.setText("");
+                textEstadistica2.setText("");
+                textEstadistica3.setText("");
+                textEstadistica4.setText("");
+            }
+        });
+
+
+        leagueOfLegendsRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Estadistica1.setText("Inhibidores destruidos");
+                Estadistica2.setText("Torretas destruidas");
+                Estadistica3.setText("Oro total");
+                Estadistica4.setText("Objetivo mas capturado");
+
+            }
+        });
+        dota2RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Estadistica1.setText("Inhibidores destruidos");
+                Estadistica2.setText("Torretas destruidas");
+                Estadistica3.setText("Oro total");
+                Estadistica4.setText("Objetivo mas capturado");
+
+            }
+        });
+        valorantRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Estadistica1.setText("Rondas totales");
+                Estadistica2.setText("Bajas totales");
+                Estadistica3.setText("Arma más popular");
+                Estadistica4.setText("Campeón mas pickeado");
+
+            }
+        });
+        counterStrike2RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Estadistica1.setText("Rondas totales");
+                Estadistica2.setText("Bajas totales");
+                Estadistica3.setText("Arma más popular");
+                Estadistica4.setText("Muertes por fuego amigo");
+
 
             }
         });

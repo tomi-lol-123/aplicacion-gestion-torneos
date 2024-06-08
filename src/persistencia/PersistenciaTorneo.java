@@ -64,7 +64,8 @@ public class PersistenciaTorneo {
                         torneo.getPremios() + ";" +
                         torneo.getOroTotal() + ";" +
                         torneo.getTorretasDestruidas() + ";" +
-                        torneo.getInhibidoresDestruidos()
+                        torneo.getInhibidoresDestruidos() + ";" +
+                        torneo.getObjetivoMasCapturados()
         );
     }
 
@@ -113,7 +114,8 @@ public class PersistenciaTorneo {
                 torneo.getPremios() + ";" +
                 torneo.getOroTotal() + ";" +
                 torneo.getTorretasDestruidas() + ";" +
-                torneo.getInhibidoresDestruidos());
-
+                torneo.getInhibidoresDestruidos() + ";" +
+                torneo.getObjetivoMasCapturados()
+        );
     }
 }

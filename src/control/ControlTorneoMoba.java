@@ -22,20 +22,21 @@ public class ControlTorneoMoba{
                     torneo[0],
                     torneo[1],
                     torneo[2],
-                    Integer.valueOf(torneo[3]),
+                    Integer.parseInt(torneo[3]),
                     new SimpleDateFormat("DD-MM-YYYY").parse(torneo[4]),
                     torneo[5],
                     torneo[6],
-                    Integer.valueOf(torneo[7]),
-                    Integer.valueOf(torneo[8]),
-                    Integer.valueOf(torneo[9])
+                    Integer.parseInt(torneo[7]),
+                    Integer.parseInt(torneo[8]),
+                    Integer.parseInt(torneo[9]),
+                    torneo[10]
             ));
         }
 
         return torneos;
     }
 
-    public void crearTorneo(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos) {
+    public void crearTorneo(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, String objetivoMasCapturados) {
         persistencia.guardarTorneo(new TorneoMoba(
                 nombre,
                 organizador,
@@ -46,7 +47,8 @@ public class ControlTorneoMoba{
                 premios,
                 oroTotal,
                 torretasDestruidas,
-                inhibidoresDestruidos
+                inhibidoresDestruidos,
+                objetivoMasCapturados
         ));
     }
 
@@ -62,11 +64,12 @@ public class ControlTorneoMoba{
                 datos[6],
                 Integer.valueOf(datos[7]),
                 Integer.valueOf(datos[8]),
-                Integer.valueOf(datos[9])
+                Integer.valueOf(datos[9]),
+                datos[10]
         );
     }
 
-    public void actualizarTorneo(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos) {
+    public void actualizarTorneo(String nombre, String organizador, String videojuego, int cupos, Date fecha, String descripcion, String premios, int oroTotal, int torretasDestruidas, int inhibidoresDestruidos, String objetivoMasCapturados) {
         persistencia.actualizarTorneo(new TorneoMoba(
                 nombre,
                 organizador,
@@ -77,7 +80,8 @@ public class ControlTorneoMoba{
                 premios,
                 oroTotal,
                 torretasDestruidas,
-                inhibidoresDestruidos
+                inhibidoresDestruidos,
+                objetivoMasCapturados
                 )
         );
     }

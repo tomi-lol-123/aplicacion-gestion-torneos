@@ -52,7 +52,6 @@ public class Main {
         gui.Equipo.SwingRegistrarATorneo SRE = new gui.Equipo.SwingRegistrarATorneo(cardLayout,panel);
 
 
-
         panel.add(SMP.getPanelSMenuPrincipal(),"Menu Principal");
         panel.add(SME.getPanelMenuEquipo(),"equipo");
         panel.add(SMT.getPanelMenuTorneo(),"torneo");

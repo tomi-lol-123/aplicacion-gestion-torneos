@@ -27,12 +27,23 @@ public class SwingVerBracket {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                int partido = Integer.parseInt(textPartido.getText());
-                int pasa = Integer.parseInt(textPasaRonda.getText());
+                try{
+                    int partido = Integer.parseInt(textPartido.getText());
+                    int pasa = Integer.parseInt(textPasaRonda.getText());
 
-                textAreaBracket.setText("Del partido " + partido + " Pasa " + pasa);
-                textPartido.setText("");
-                textPasaRonda.setText("");
+                    textAreaBracket.setText("Del partido " + partido + " Pasa " + pasa);
+                    textPartido.setText("");
+                    textPasaRonda.setText("");
+                }
+
+                catch(NumberFormatException ex){
+
+                    JOptionPane.showMessageDialog(panelVerBracket, "Debes ingresar números enteros", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+                }
+
+
 
             }
         });

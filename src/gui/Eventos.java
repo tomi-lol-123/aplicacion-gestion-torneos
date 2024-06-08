@@ -1,9 +1,17 @@
 package gui;
 
+import clases.TorneoCounter;
+import clases.TorneoMoba;
+import clases.TorneoValorant;
+import control.ControlTorneoCounter;
+import control.ControlTorneoMoba;
+import control.ControlTorneoValorant;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 public class Eventos {
     private JButton regresar;
@@ -48,28 +56,115 @@ public class Eventos {
         verButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String juegoSeleccionado = "";
+                String devolucion = "";
+
                 if (leagueOfLegendsRadioButton.isSelected()) {
                     juegoSeleccionado = "League of Legends";
-                    textAreaEventos.setText("3 Últimos eventos de League of Legends" + "\n" + "\n" + "Evento 1" + "\n" + "Evento 2" + "\n" + "Evento 3");
+
+                    ControlTorneoMoba controlTorneoMoba = new ControlTorneoMoba();
+                    try {
+                        for (TorneoMoba torneo : controlTorneoMoba.recuperarTorneos(juegoSeleccionado)){
+                            devolucion +=
+                                    "Nombre: " + torneo.getNombre() + "\n" +
+                                    "Organizador: " + torneo.getOrganizador() + "\n" +
+                                    "Videojuego: " + torneo.getVideojuego() + "\n" +
+                                    "Cupos: " + torneo.getCupos() + "\n" +
+                                    "Fecha: " + torneo.getFecha() + "\n" +
+                                    "Descripcion: " + torneo.getVideojuego() + "\n" +
+                                    "Premios: " + torneo.getPremios() + "\n" +
+                                    "Oro total: " + torneo.getOroTotal() + "\n" +
+                                    "Torretas destruidas: " + torneo.getTorretasDestruidas() + "\n" +
+                                    "Inhibidores destruidos: " + torneo.getInhibidoresDestruidos() + "\n" +
+                                    "Objetivo mas capturado: " + torneo.getObjetivoMasCapturados() + "\n" +
+                                    "------------------------------------------------------------- \n";
+
+                        }
+                    } catch (ParseException ex) {
+                        throw new RuntimeException(ex);
+                    }
 
 
                 } else if (dota2RadioButton.isSelected()) {
-                    juegoSeleccionado = "Dota 2";
-                    textAreaEventos.setText("3 Últimos eventos de Dota 2" + "\n" + "\n" + "Evento 1" + "\n" + "Evento 2" + "\n" + "Evento 3");
+                    juegoSeleccionado = "Dota";
+                    ControlTorneoMoba controlTorneoMoba = new ControlTorneoMoba();
 
+                    try {
+                        for (TorneoMoba torneo : controlTorneoMoba.recuperarTorneos(juegoSeleccionado)){
+                            devolucion +=
+                                    "Nombre: " + torneo.getNombre() + "\n" +
+                                            "Organizador: " + torneo.getOrganizador() + "\n" +
+                                            "Videojuego: " + torneo.getVideojuego() + "\n" +
+                                            "Cupos: " + torneo.getCupos() + "\n" +
+                                            "Fecha: " + torneo.getFecha() + "\n" +
+                                            "Descripcion: " + torneo.getVideojuego() + "\n" +
+                                            "Premios: " + torneo.getPremios() + "\n" +
+                                            "Oro total: " + torneo.getOroTotal() + "\n" +
+                                            "Torretas destruidas: " + torneo.getTorretasDestruidas() + "\n" +
+                                            "Inhibidores destruidos: " + torneo.getInhibidoresDestruidos() + "\n" +
+                                            "Objetivo mas capturado: " + torneo.getObjetivoMasCapturados() + "\n" +
+                                            "------------------------------------------------------------- \n";
+
+                        }
+                    } catch (ParseException ex) {
+                        throw new RuntimeException(ex);
+                    }
 
                 } else if (valorantRadioButton.isSelected()) {
                     juegoSeleccionado = "Valorant";
-                    textAreaEventos.setText("3 Últimos eventos de Valorant" + "\n" + "\n" + "Evento 1" + "\n" + "Evento 2" + "\n" + "Evento 3");
 
+                    ControlTorneoValorant controlTorneoValorant = new ControlTorneoValorant();
+                    try {
+                        for (TorneoValorant torneo : controlTorneoValorant.recuperarTorneos(juegoSeleccionado)){
+                            devolucion +=
+                                    "Nombre: " + torneo.getNombre() + "\n" +
+                                            "Organizador: " + torneo.getOrganizador() + "\n" +
+                                            "Videojuego: " + torneo.getVideojuego() + "\n" +
+                                            "Cupos: " + torneo.getCupos() + "\n" +
+                                            "Fecha: " + torneo.getFecha() + "\n" +
+                                            "Descripcion: " + torneo.getVideojuego() + "\n" +
+                                            "Premios: " + torneo.getPremios() + "\n" +
+                                            "Bajas totales: " + torneo.getBajasTotales() + "\n" +
+                                            "Rondas totales: " + torneo.getRondasTotales() + "\n" +
+                                            "Arma mas popular: " + torneo.getArmarMasPopular() + "\n" +
+                                            "Campeon mas pickeado: " + torneo.getChampMasPickeado() + "\n" +
+                                            "------------------------------------------------------------- \n";
+
+                        }
+                    } catch (ParseException ex) {
+                        throw new RuntimeException(ex);
+                    }
 
                 } else if (counterStrike2RadioButton.isSelected()) {
-                    juegoSeleccionado = "Counter-Strike 2";
-                    textAreaEventos.setText("3 Últimos eventos de Counter-Strike 2" + "\n" + "\n" + "Evento 1" + "\n" + "Evento 2" + "\n" + "Evento 3");
+                    juegoSeleccionado = "Counter-Strike";
+
+                    ControlTorneoCounter controlTorneoCounter = new ControlTorneoCounter();
+                    try {
+                        for (TorneoCounter torneo : controlTorneoCounter.recuperarTorneos(juegoSeleccionado)){
+                            devolucion +=
+                                    "Nombre: " + torneo.getNombre() + "\n" +
+                                            "Organizador: " + torneo.getOrganizador() + "\n" +
+                                            "Videojuego: " + torneo.getVideojuego() + "\n" +
+                                            "Cupos: " + torneo.getCupos() + "\n" +
+                                            "Fecha: " + torneo.getFecha() + "\n" +
+                                            "Descripcion: " + torneo.getVideojuego() + "\n" +
+                                            "Premios: " + torneo.getPremios() + "\n" +
+                                            "Bajas totales: " + torneo.getBajasTotales() + "\n" +
+                                            "Rondas totales: " + torneo.getRondasTotales() + "\n" +
+                                            "Arma mas popular: " + torneo.getArmarMasPopular() + "\n" +
+                                            "Muertes por fuego amigo: " + torneo.getMuertesPorFuegoAmigo() + "\n" +
+                                            "------------------------------------------------------------- \n";
+
+                        }
+                    } catch (ParseException ex) {
+                        throw new RuntimeException(ex);
+                    }
 
 
                 }
+                textAreaEventos.setText(devolucion);
+
             }
         });
         limpiarButton.addActionListener(new ActionListener() {
