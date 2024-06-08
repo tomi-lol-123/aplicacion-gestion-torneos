@@ -4,29 +4,27 @@ import clases.TorneoCounter;
 import clases.TorneoMoba;
 import clases.TorneoValorant;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PersistenciaTorneo {
 
-    private String path = "src/persistencia/archivosTxt/torneoGuardados.txt";
+    private static final String PATH = "src/persistencia/archivosTxt/torneoGuardados.txt";
     Operaciones operaciones = new Operaciones();
 
     public ArrayList<String[]> recuperarTorneos(String juego) {
-        return  operaciones.recuperarRegistros(path, juego);
+        return  operaciones.recuperarRegistros(PATH, juego);
     }
 
     public String[] recuperarTorneo(String nombre) {
-        return operaciones.recuperarRegistro(path, nombre);
+        return operaciones.recuperarRegistro(PATH, nombre);
     }
 
     public void borrarTorneo(String objetivo) {
-        operaciones.borrarRegistro(path, objetivo);
+        operaciones.borrarRegistro(PATH, objetivo);
     }
 
     public void guardarTorneo(TorneoValorant torneo) {
-        operaciones.agregarRegistro(path,
+        operaciones.agregarRegistro(PATH,
                 torneo.getNombre() + ";" +
                         torneo.getOrganizador() + ";" +
                         torneo.getVideojuego() + ";" +
@@ -41,7 +39,7 @@ public class PersistenciaTorneo {
         );
     }
     public void guardarTorneo(TorneoCounter torneo) {
-        operaciones.agregarRegistro(path,
+        operaciones.agregarRegistro(PATH,
                 torneo.getNombre() + ";" +
                         torneo.getOrganizador() + ";" +
                         torneo.getVideojuego() + ";" +
@@ -56,7 +54,7 @@ public class PersistenciaTorneo {
         );
     }
     public void guardarTorneo(TorneoMoba torneo) {
-        operaciones.agregarRegistro(path,
+        operaciones.agregarRegistro(PATH,
                 torneo.getNombre() + ";" +
                         torneo.getOrganizador() + ";" +
                         torneo.getVideojuego() + ";" +
@@ -72,7 +70,7 @@ public class PersistenciaTorneo {
 
     public void actualizarTorneo(TorneoCounter torneo) {
 
-        operaciones.actualizarRegistro(path, String.valueOf(torneo.getNombre()), (
+        operaciones.actualizarRegistro(PATH, String.valueOf(torneo.getNombre()), (
                 torneo.getNombre() + ";" +
                 torneo.getOrganizador() + ";" +
                 torneo.getVideojuego() + ";" +
@@ -88,7 +86,7 @@ public class PersistenciaTorneo {
 
     public void actualizarTorneo(TorneoValorant torneo) {
 
-        operaciones.actualizarRegistro(path, String.valueOf(torneo.getNombre()), (
+        operaciones.actualizarRegistro(PATH, String.valueOf(torneo.getNombre()), (
                 torneo.getNombre() + ";" +
                 torneo.getOrganizador() + ";" +
                 torneo.getVideojuego() + ";" +
@@ -105,7 +103,7 @@ public class PersistenciaTorneo {
 
     public void actualizarTorneo(TorneoMoba torneo) {
 
-        operaciones.actualizarRegistro(path, String.valueOf(torneo.getNombre()), (
+        operaciones.actualizarRegistro(PATH, String.valueOf(torneo.getNombre()), (
                 torneo.getNombre() + ";" +
                 torneo.getOrganizador() + ";" +
                 torneo.getVideojuego() + ";" +

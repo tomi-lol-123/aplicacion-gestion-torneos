@@ -1,5 +1,9 @@
 package gui.Torneo;
 
+import control.ControlTorneoCounter;
+import control.ControlTorneoMoba;
+import control.ControlTorneoValorant;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -58,21 +62,35 @@ public class SwingCrearTorneo {
 
                     else{
 
-                        String juegoSeleccionado = "";
+                        String juegoSeleccionado;
                         if (leagueOfLegendsRadioButton.isSelected()) {
-                            juegoSeleccionado = "League of Legends";
+                            juegoSeleccionado = "lol";
                         } else if (dota2RadioButton.isSelected()) {
-                            juegoSeleccionado = "Dota 2";
+                            juegoSeleccionado = "dota";
                         } else if (valorantRadioButton.isSelected()) {
-                            juegoSeleccionado = "Valorant";
+                            juegoSeleccionado = "valorant";
                         } else if (counterStrike2RadioButton.isSelected()) {
-                            juegoSeleccionado = "Counter-Strike 2";
+                            juegoSeleccionado = "cs";
+                        }
+                        else {
+                            juegoSeleccionado = "juego desconocido";
                         }
 
 
                         System.out.println();
                         System.out.println("---Torneo---");
                         System.out.println(IDTorneo + " " + Nombre + " " + Organizador + " " + Cupos + " " + Premio + " " + Fecha + " " + Estadisticas + " " + juegoSeleccionado + " "+ "\n" + "Reglas: " + "\n" + reglasTexto);
+
+                        if (juegoSeleccionado.equals("valorant")) {
+                            ControlTorneoValorant controlTorneoValorant = new ControlTorneoValorant();
+//                            controlTorneoValorant.crearTorneo();
+                        }
+                        else if (juegoSeleccionado.equals("cs")) {
+                            ControlTorneoCounter controlTorneoCounter = new ControlTorneoCounter();
+                        }
+                        else {
+                            ControlTorneoMoba controlTorneoMoba = new ControlTorneoMoba();
+                        }
 
                         textIDTorneo.setText("");
                         textNombre.setText("");

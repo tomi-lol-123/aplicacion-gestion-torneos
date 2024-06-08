@@ -1,5 +1,8 @@
 package gui.Equipo;
 
+import clases.Equipo;
+import control.ControlEquipo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,9 +27,12 @@ public class SwingBuscarEquipo {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String nombreEquipo = textIDEquipo.getText();
+                String idEquipo = textIDEquipo.getText();
 
-                if (nombreEquipo.isEmpty()) {
+                ControlEquipo controlEquipo = new ControlEquipo();
+                Equipo equipo = controlEquipo.recuperarEquipo(idEquipo);
+
+                if (idEquipo.isEmpty()) {
 
                     JOptionPane.showMessageDialog(panelBuscarEquipo, "Debe ingresar el nombre del Equipo", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -34,7 +40,7 @@ public class SwingBuscarEquipo {
 
                 else {
 
-                    textAreaEquipo.setText(nombreEquipo);
+                    textAreaEquipo.setText(equipo.getNombre() + " " + equipo.getResponsable());
 
                     textIDEquipo.setText("");
 
